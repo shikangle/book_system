@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>添加作者</title>
+
+</head>
+<body>
+<h1>添加作者</h1>
+<form action="/add_author/"method="post">
+    <p>
+        作者姓名：<input type="text" name="author_name" value="{{ author.name }}">
+    </p>
+    <p>
+        作品:
+        <select name="books" multiple>
+            {% for book in book_list %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+
+        </select>
+    </p>
+<p>
+    <input type="submit" value="提交">
+</p>
+</form>
+</body>
+</html>
